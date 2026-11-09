@@ -1,0 +1,14 @@
+id,name,group,processing,encoding,rank,computed_from,description,demo_key
+wave,Waveform / loudness,Raw signal,signal,plot,0,audio,"Amplitude over time, often with a loudness envelope. The rawest view of the signal.",wave
+spec,Static spectrogram,Time–frequency,signal,plot,1,audio,"Time left to right, frequency bottom to top, energy as darkness or colour. Read after the sound has ended.",spec_wide
+specrt,Real-time spectrogram,Time–frequency,signal,plot,1,audio,"The same picture drawn live while the sound is produced, scrolling past a 'now' edge.",spec_narrow
+pseudo,Synthetic pseudo-spectrogram,Time–frequency,signal,plot,1,hand-drawn,"Hand-drawn formant bars standing in for speech, so cue position and salience can be controlled.",
+spectrum,Spectrum slice (LPC) with target,Spectrum,signal,plot,2,audio,"One moment's frequency profile, e.g. an LPC curve whose peaks are formants, plus a target marker or template.",lpc
+pitch,Pitch contour,Extracted feature,feature,plot,3,audio,"Fundamental frequency over time, often against a target note.",pitch
+ripple,Location display,Extracted feature,feature,abstract,3,audio,"Rings or arrows showing where a sound came from and how loud it was, without pitch.",
+icon,Recognized-sound icon or label,Recognized label,inferred,symbol,4,audio + classifier,"A recognizer names the sound; the display shows only the result, e.g. a doorbell icon.",
+caption,Expressive captions,Extracted feature,feature,abstract,4,audio + speech recognizer,"Speech-to-text whose typography (size, weight, colour) varies with prosody or emotion.",
+learned,Learned image,Learned mapping,learned,abstract,5,audio + neural network,A neural network maps sound to faces or digits so that similar sounds look alike.,
+ultra,Ultrasound of the tongue,Physiological (comparison only),physiological,none,9,ultrasound probe,"Shows the tongue, not the sound. Physiological biofeedback is excluded; appears only as a comparison arm.",
+midi,Music animation driven by MIDI,Symbolic (DHH music only),symbolic,abstract,6,MIDI / score,Visuals generated from note data rather than audio: abstract particles or video of gestures. Included only when designed for and evaluated with DHH users.,
+emoji,Emotion cues (emoji),Recognized label,inferred,symbol,4,audio + emotion model,An emotion model reads the voice; the display shows emoji or similar cues for the recognized emotion.,

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeing Voice · Overview</title>
+<meta name="description" content="A review of visual displays of voice and sound: what has been designed, for whom and in which contexts, and what user studies found.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="data/data.js"></script>
+<script src="demo/demo.js"></script>
+<script src="assets/common.js"></script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="index.html">Seeing Voice</a>
+  <nav class="nav" aria-label="Pages">
+    <a href="index.html">Overview</a>
+    <a href="studies.html">Studies</a>
+    <a href="method.html">Method</a>
+  </nav>
+  <button class="theme-btn" type="button"></button>
+</div></header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="kicker">Literature review · working draft</span>
+    <h1>Visualizing voice and sound: designs, users, effects</h1>
+    <p class="lede">Which visual displays of sound have been designed, static or real-time; in which settings and for whom (reading speech, training one's own voice, sound access for deaf and hard-of-hearing people); and what user studies found. The review is meant to locate the gap for our own direction: abstract displays built by rule from acoustic features and made readable through crossmodal correspondences.</p>
+    <ol class="rqs">
+      <li><b>RQ1</b> What visual displays of sound have been designed? <span>processing level × visual encoding</span></li>
+      <li><b>RQ2</b> For which users and in which settings? <span>hearing / DHH × external sound / own voice</span></li>
+      <li><b>RQ3</b> How were they evaluated, and with what outcomes? <span>study design; what was tested: discrimination, interpretation, learning, preference, experience</span></li>
+      <li><b>RQ4</b> What accounts of perception inform these designs, and how do the authors explain why their displays work or fail? <span>theory cited, design rationale, post-hoc explanation</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="crit-h">
+    <div class="section-head">
+      <span class="kicker">Inclusion criteria</span>
+      <h2 id="crit-h">A study is in if it meets one of three criteria</h2>
+    </div>
+    <div class="criteria">
+      <a class="crit panel" data-c="1" href="studies.html?criterion=1" style="text-decoration:none;color:inherit">
+        <span class="n">Criterion 1</span>
+        <h3>Reading speech from spectrographic displays</h3>
+        <p>Viewers identify, match or discriminate speech sounds from a spectrogram or spectrogram-like picture.</p>
+        <span class="count" data-count="1"></span>
+      </a>
+      <a class="crit panel" data-c="2" href="studies.html?criterion=2" style="text-decoration:none;color:inherit">
+        <span class="n">Criterion 2</span>
+        <h3>Spectral displays as voice-training feedback</h3>
+        <p>People see a display of their own voice while learning to speak or sing; includes speech therapy and singing pedagogy.</p>
+        <span class="count" data-count="2"></span>
+      </a>
+      <a class="crit panel" data-c="3" href="studies.html?criterion=3" style="text-decoration:none;color:inherit">
+        <span class="n">Criterion 3</span>
+        <h3>Sound visualization for deaf and hard-of-hearing users</h3>
+        <p>Displays designed for or tested with DHH users. Not limited to spectrograms.</p>
+        <span class="count" data-count="3"></span>
+      </a>
+    </div>
+    <div class="rules panel">
+      <h3>Applies to all three</h3>
+      <ul class="in">
+        <li>The display represents sound and is computed from the acoustic signal, live or afterwards. One exception, criterion 3 only: displays driven by MIDI are included when they were designed for DHH users.</li>
+        <li>Viewers are non-experts. Perceptual training and familiarization are fine; taught acoustic phonetics is not (training level ≤ 2, see <a href="method.html#training">Method</a>).</li>
+        <li><b>There is a user study:</b> people used the display and something was measured (accuracy, learning, preference or experience).</li>
+      </ul>
+      <ul class="ex">
+        <li>Music visualizations made as artistic or creative work without a user study.</li>
+        <li>Music notation and lyrics: writing systems, not displays of the sound.</li>
+        <li>Expert spectrogram readers (kept as a comparison point only).</li>
+        <li>Physiological biofeedback that shows the vocal tract or muscles instead of the sound (ultrasound, electropalatography, EMG, electroglottography, laryngeal imaging), except as a comparison arm. <a href="method.html#physio">Why</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Demo hidden 2026-11-04: not representative of the reviewed studies. Remove `hidden` to show it again. -->
+  <section aria-labelledby="demo-h" hidden>
+    <div class="section-head">
+      <span class="kicker">Demo</span>
+      <h2 id="demo-h">One recording, several pictures</h2>
+      <p>Each row is computed from the same sound. Press play, or click any row to jump there. The row names link to the studies that used that kind of display.</p>
+    </div>
+    <div class="demo panel" id="demo">
+      <div class="demo-bar">
+        <div class="chips" role="group" aria-label="Recording" id="samples"></div>
+        <button class="play" type="button" id="play" aria-label="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="play-icon"><path d="M8 5v14l11-7z"/></svg>
+          <span id="play-label">Play</span>
+        </button>
+        <audio id="audio" preload="none"></audio>
+      </div>
+      <div class="demo-grid">
+        <div>
+          <div class="tracks" id="tracks"></div>
+          <div class="timeaxis"><div></div><div class="ticks" id="ticks"></div></div>
+        </div>
+        <div class="side" id="side"></div>
+      </div>
+      <div>
+        <div class="variants-head">
+          <h3>Same spectrogram, different rendering</h3>
+          <span class="muted" style="font-size:13px">25 ms window. Only colour map, dynamic range or frequency axis changes.</span>
+        </div>
+        <div class="variants" id="variants" style="margin-top:10px"></div>
+      </div>
+      <p class="demo-note" id="demo-note"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="gal-h">
+    <div class="section-head">
+      <span class="kicker">RQ1 · Display types</span>
+      <h2 id="gal-h">What is computed from the sound, and how it is drawn</h2>
+      <p>Rows: how far the display is from the signal. Columns: how it is drawn. A plot has axes; an abstract mapping turns a quantity into a visual property such as size, colour or shape; a symbol stands for a category. Pictures are demo renderings of the speech sample or schematics. Click a type to see its studies.</p>
+    </div>
+    <div class="dmatrix" id="gallery"></div>
+    <p class="dm-note" id="dm-note"></p>
+  </section>
+
+  <section aria-labelledby="ev-h">
+    <div class="section-head">
+      <span class="kicker">RQ3–RQ4 · User studies and theory</span>
+      <h2 id="ev-h">How the displays were tested</h2>
+      <p>Each dot is one included or pending study, placed by criterion. Hollow marks are pending studies. Hover a dot for the study; click it to open the study in the table. Outcome types follow the distinction between user performance and user experience in Lam et al. (2012), plus learning and practice; see <a href="method.html#outcome">Method</a>.</p>
+    </div>
+    <div class="ev-tiles" id="ev-tiles"></div>
+    <div class="ev-grid">
+      <figure class="panel ev-fig">
+        <figcaption><b>What was measured</b><span>A study can measure several things.</span></figcaption>
+        <div class="table-scroll"><table class="dotmatrix" id="m-outcome"></table></div>
+      </figure>
+      <figure class="panel ev-fig">
+        <figcaption><b>Study design</b><span>One design per study.</span></figcaption>
+        <div class="table-scroll"><table class="dotmatrix" id="m-design"></table></div>
+      </figure>
+    </div>
+    <figure class="panel ev-fig" style="margin-top:12px">
+      <figcaption><b>Number of participants</b><span>Log scale. Studies without a coded number are counted on the right.</span></figcaption>
+      <div id="n-strip"></div>
+    </figure>
+    <div class="ev-grid" style="margin-top:12px">
+      <figure class="panel ev-fig">
+        <figcaption><b>RQ3 · Tested for interpretation by untrained viewers?</b><span>Did viewers say what a sound is or is like from the display alone, without first learning the mapping?</span></figcaption>
+        <div class="table-scroll"><table class="dotmatrix" id="m-interp"></table></div>
+      </figure>
+      <figure class="panel ev-fig">
+        <figcaption><b>RQ4 · Theory and mechanism</b><span>What the authors give as grounds for their design, and how they explain their results.</span></figcaption>
+        <div id="theory-panel"></div>
+      </figure>
+    </div>
+    <div class="ev-tip" id="ev-tip" role="tooltip"></div>
+  </section>
+
+  <footer class="foot">
+    <span>Data built <span data-built></span> from <code>data/studies.csv</code>.</span>
+    <span><a href="method.html">Criteria, coding and open decisions</a></span>
+  </footer>
+</main>
+
+<script src="assets/home.js"></script>
+<script src="assets/evaluation.js"></script>
+</body>
+</html>

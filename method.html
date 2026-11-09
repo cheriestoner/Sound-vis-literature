@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeing Voice · Method</title>
+<meta name="description" content="Inclusion criteria, coding scheme, open decisions and existing reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="data/data.js"></script>
+<script src="assets/common.js"></script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="index.html">Seeing Voice</a>
+  <nav class="nav" aria-label="Pages">
+    <a href="index.html">Overview</a>
+    <a href="studies.html">Studies</a>
+    <a href="method.html">Method</a>
+  </nav>
+  <button class="theme-btn" type="button"></button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="kicker">Method</span>
+    <h1>How studies were chosen and coded</h1>
+    <p class="lede">Planned as a scoping review (PRISMA-ScR): a reproducible search, two-stage screening and a fixed charting form, with descriptive counts and narrative synthesis rather than meta-analysis. Until the structured search is run, the studies here come from purposive searching, so the gaps listed are gaps in what we have found, not proven gaps.</p>
+    <ol class="rqs">
+      <li><b>RQ1</b> What visual displays of sound have been designed? <span>processing level × visual encoding · columns <code>displays</code>, and <code>processing</code>, <code>encoding</code> in displays.csv</span></li>
+      <li><b>RQ2</b> For which users and in which settings? <span>hearing / DHH × external sound / own voice · <code>target_users</code>, <code>target_task</code>, <code>whose_sound</code>, <code>dhh</code>, <code>sound_type</code></span></li>
+      <li><b>RQ3</b> How were they evaluated, and with what outcomes? <span>study design; what was tested · <code>design</code>, <code>n</code>, <code>compared</code>, <code>outcome</code>, <code>untrained_interpretation</code>, <code>measures</code>, <code>finding</code></span></li>
+      <li><b>RQ4</b> What accounts of perception inform these designs, and how do the authors explain why their displays work or fail? <span><code>cited_theory</code>, <code>mapping_rationale</code>, <code>design_rationale</code>, <code>post_hoc_explanation</code></span></li>
+    </ol>
+  </section>
+
+  <section class="prose" aria-labelledby="crit-h">
+    <h2 id="crit-h">Inclusion criteria</h2>
+    <p>A study is included if it meets at least one criterion:</p>
+    <ol>
+      <li><b>Reading speech from spectrographic displays.</b> Viewers identify, match or discriminate speech from a spectrogram or a spectrogram-like picture.</li>
+      <li><b>Spectral or spectrographic displays as voice-training feedback.</b> People see a display of their own voice while learning to speak or sing, including speech therapy and singing pedagogy. “Spectral” covers time–frequency displays (spectrograms) and frequency-only displays (spectra, e.g. LPC curves).</li>
+      <li><b>Sound visualization for deaf and hard-of-hearing users.</b> Displays designed for or tested with DHH users, not limited to spectrograms.</li>
+    </ol>
+    <p>and all of the following hold:</p>
+    <ul>
+      <li>The display is <b>computed from the acoustic signal</b>, live or afterwards. <b>Exception (criterion 3 only):</b> displays driven by symbolic music data such as MIDI are included when they were designed for DHH users. The <code>displays</code> column records the source, so these studies stay distinguishable from signal-based ones.</li>
+      <li>Viewers are <b>non-experts</b>: training level 0–2 below. Expert readers appear only as a comparison point.</li>
+      <li>There is a <b>user study</b>: people used the display and something was measured (accuracy, learning, preference or experience). A system description, a demo or a design rationale alone is not enough.</li>
+    </ul>
+    <p>Excluded: music visualizations made as artistic or creative work without a user study; music notation and lyrics, which are writing systems rather than displays of the sound.</p>
+    <p class="muted" style="font-size:13.5px">Revised 1 Nov 2026: the rule “computed from the acoustic signal” previously excluded all MIDI-driven displays, including Nanayakkara et al. (2013). The user-study requirement now does the work of keeping out artistic music visualizers.</p>
+    <p id="physio"><b>Physiological biofeedback is excluded</b>: displays of the articulators or muscles rather than of the sound, such as ultrasound tongue imaging, electropalatography, electromagnetic articulography, surface EMG, electroglottography and laryngeal endoscopy. Reasons: (1) they show how a sound is made, not what it sounds like, while this review is about visual representations of the acoustic signal; (2) they need sensors on or in the speaker, so they cannot show other people's voices or everyday sounds and do not apply to reading others' sound or to DHH sound access. They appear only where a study compares them with an acoustic display (e.g. McAllister et al., 2025).</p>
+  </section>
+
+  <section class="prose" id="training" aria-labelledby="train-h">
+    <h2 id="train-h">Training level (criterion 1)</h2>
+    <p>Inclusion depends on <i>what</i> was trained, not how long. The line between levels 2 and 3 is whether participants work out the mapping from examples or are told the rules. Criterion 2 is exempt: in voice training, being told what the target is belongs to the method.</p>
+    <div class="table-scroll"><table class="simple">
+      <thead><tr><th>Level</th><th>Training content</th><th>Included</th></tr></thead>
+      <tbody>
+        <tr><td>0 · None</td><td>Participants answer straight from the display</td><td>Yes</td></tr>
+        <tr><td>1 · Orientation</td><td>Brief explanation of the axes, or a few examples</td><td>Yes</td></tr>
+        <tr><td>2 · Perceptual training</td><td>Repeated practice with feedback or labelled examples, without acoustic rules</td><td>Yes</td></tr>
+        <tr><td>3 · Explicit instruction</td><td>Systematic teaching of acoustic-phonetic rules</td><td>No (comparison group only)</td></tr>
+        <tr><td>4 · Experts</td><td>Phoneticians, acoustics researchers</td><td>No</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="prose" aria-labelledby="code-h">
+    <h2 id="code-h">Coding scheme</h2>
+    <p>Each study is described with plain, observable variables instead of a theoretical framework. The columns are in <code>data/studies.csv</code>; <code>build.py</code> rejects values not listed here.</p>
+    <div class="table-scroll"><table class="simple">
+      <thead><tr><th>Column</th><th>Values</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>criteria</code></td><td><code>1</code> <code>2</code> <code>3</code> (several, separated by <code>;</code>)</td><td>Which inclusion criteria the study meets</td></tr>
+        <tr><td><code>displays</code></td><td>ids from <code>displays.csv</code></td><td>Display types shown to participants</td></tr>
+        <tr><td><code>target_users</code></td><td>free text</td><td>Who the display was designed for (may differ from who was tested)</td></tr>
+        <tr><td><code>target_task</code></td><td>free text</td><td>What the display is meant to help them do</td></tr>
+        <tr><td><code>sound_type</code></td><td>speech · singing · nonverbal-vocal · environmental · music · animal (several, <code>;</code>)</td><td>Kind of sound shown</td></tr>
+        <tr><td><code>sound_properties</code></td><td>free text</td><td>What about the sound is shown: the whole spectrum, selected acoustic features (F0, formants, loudness, location), or inferred information (sound class, emotion)</td></tr>
+        <tr><td><code>scope</code></td><td>general · task-specific · both · unknown</td><td>General: shows the sound as a whole, for any use (e.g. a spectrogram). Task-specific: shows only what one task needs (e.g. F3 against a target for /r/). Both: the study compares the two.</td></tr>
+        <tr class="th-row"><td><code>cited_theory</code></td><td>sensory-substitution · crossmodal-correspondence · amodal-perception · sensorimotor · augmentation · embodiment · motor-learning · biofeedback · user-centred-design · other · none-stated (several, <code>;</code>)</td><td>Theory the authors cite as grounds for the design. Empty = not coded yet.</td></tr>
+        <tr class="th-row"><td><code>mapping_rationale</code></td><td>crossmodal-correspondence · amodal · sensorimotor · convention · learned · none-stated (several, <code>;</code>)</td><td>Grounds the authors give for mapping each acoustic feature to its visual form. <i>Convention</i>: a standard plot (e.g. frequency upwards). <i>Learned</i>: the mapping is fitted by a model. Empty = not coded yet.</td></tr>
+        <tr class="th-row"><td><code>design_rationale</code></td><td>free text, short quote or paraphrase</td><td>Reason the authors give for the design before testing, usually in the introduction or design section.</td></tr>
+        <tr class="th-row"><td><code>post_hoc_explanation</code></td><td>free text, short quote or paraphrase</td><td>How the discussion accounts for the results: why the display worked or failed. Note where it comes from (abstract, full text).</td></tr>
+        <tr class="ev-row"><td><code>untrained_interpretation</code></td><td>yes · no · unknown</td><td>Whether viewers said what a sound is or is like from the display alone, without first learning the mapping. Matching, discrimination, learning over trials and producing one's own voice count as <i>no</i>.</td></tr>
+        <tr><td><code>whose_sound</code></td><td>own · other · both · unknown</td><td>Whether viewers see their own voice or someone else's sound</td></tr>
+        <tr><td><code>task</code></td><td>identify · match · detect · produce · rate · unknown</td><td>What viewers do with the display</td></tr>
+        <tr><td><code>timing</code></td><td>static · real-time · after-attempt · unknown</td><td>When the display appears relative to the sound</td></tr>
+        <tr><td><code>attention</code></td><td>focal · peripheral · unknown</td><td>Whether the display is the main task or watched alongside other activity</td></tr>
+        <tr><td><code>dhh</code></td><td>yes · no · mixed · unknown</td><td>Whether participants include deaf or hard-of-hearing people</td></tr>
+        <tr><td><code>training</code></td><td>free text, level first</td><td>Training level (criterion 1) and duration</td></tr>
+        <tr class="ev-row"><td><code>design</code></td><td>rct · experiment · single-case · case-study · single-group · crowdsourcing · mixed · qualitative · unknown</td><td>Type of user study (definitions below)</td></tr>
+        <tr class="ev-row"><td><code>n</code></td><td>free text, number first</td><td>Number of participants, with subgroups</td></tr>
+        <tr class="ev-row"><td><code>compared</code></td><td>free text</td><td>Conditions or groups compared (the independent variables); empty if none</td></tr>
+        <tr class="ev-row"><td><code>procedure</code></td><td>free text</td><td>What participants did: sessions, training, task</td></tr>
+        <tr class="ev-row"><td><code>outcome</code></td><td>performance · learning · preference · experience · practice (several, <code>;</code>)</td><td>Type of outcome measured (<a href="#outcome">definitions</a>)</td></tr>
+        <tr class="ev-row"><td><code>measures</code></td><td>free text</td><td>What was measured (the dependent variables)</td></tr>
+        <tr class="ev-row"><td><code>finding</code></td><td>free text</td><td>Main result</td></tr>
+        <tr><td><code>found_via</code></td><td>prior · database · snowball · review-list · hand-search</td><td>How the study was found (for the flow diagram)</td></tr>
+        <tr class="ev-row"><td><code>limits</code></td><td>free text</td><td>Limitations; mark our own observations as such</td></tr>
+        <tr><td><code>include</code></td><td>yes · pending · background · no</td><td>Decision; <code>no</code> needs an <code>exclude_reason</code></td></tr>
+        <tr><td><code>status</code></td><td>read · abstract · secondary · verify</td><td>How well the coding is backed (below)</td></tr>
+        <tr><td><code>image</code></td><td>path, default <code>images/&lt;id&gt;.png</code></td><td>Screenshot of a figure from the paper</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Source status</h3>
+    <ul>
+      <li><span class="badge st-read">full text read</span> coding checked against the paper.</li>
+      <li><span class="badge st-abstract">abstract only</span> coding from the abstract or publisher summary.</li>
+      <li><span class="badge st-secondary">secondary source</span> known only through another paper or a catalogue summary.</li>
+      <li><span class="badge st-verify">to verify</span> details uncertain or not yet checked; do not cite yet.</li>
+    </ul>
+    <p>Text marked <span class="ours">[Ours: …]</span> in results or limitations is our interpretation, not the authors'. Every row was coded by Claude and is being checked against the originals; the checklist is in <code>TODO.md</code>.</p>
+    <h3>Review type and search</h3>
+    <p>So far a conceptual review: studies were found by purposive searching, reference lists and snowballing, not by a documented database search. The plan for a structured search (likely a scoping review following PRISMA-ScR), the decisions it needs and the areas not yet searched are in <code>SEARCH.md</code>. The <code>found_via</code> column records how each study was found; all current ones are <code>prior</code>.</p>
+  </section>
+
+  <section aria-labelledby="ev-h">
+    <div class="section-head">
+      <h2 id="ev-h">How the studies were evaluated</h2>
+      <p>Included and pending studies by user-study design and criterion. A study coded for two criteria is counted in both.</p>
+    </div>
+    <div class="panel table-scroll"><table class="simple" id="design-matrix"></table></div>
+    <div class="prose" style="margin-top:16px">
+      <h3>Design types</h3>
+      <ul>
+        <li><b>Randomized controlled trial</b>: participants randomly assigned to treatments.</li>
+        <li><b>Experiment</b>: conditions or groups compared, or accuracy measured under controlled conditions.</li>
+        <li><b>Single-case design</b>: a few participants, each measured repeatedly across phases or alternating treatments.</li>
+        <li><b>Case study</b>: one participant, without a formal single-case design.</li>
+        <li><b>Single group</b>: one group measured over time, no comparison condition.</li>
+        <li><b>Crowdsourcing</b>: judgments collected from online volunteers.</li>
+        <li><b>Mixed methods</b>: measures combined with interviews or design feedback.</li>
+        <li><b>Qualitative</b>: interviews, observation or action research only.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="prose" id="matrix">
+    <h2>Display matrix (RQ1)</h2>
+    <p>Each display type in <code>displays.csv</code> is coded on two dimensions.</p>
+    <p><b>Processing level</b> (<code>processing</code>): what is computed between the signal and the picture. <i>Signal</i>: the whole signal, transformed but not selected (waveform, spectrogram, spectrum). <i>Feature</i>: selected measurable quantities (F0, loudness, location). <i>Inferred</i>: the output of a recognizer (sound class, emotion). <i>Learned</i>: a neural network's latent space. <i>Symbolic</i>: note data such as MIDI, not audio. <i>Physiological</i>: not sound at all; outside scope.</p>
+    <p><b>Visual encoding</b> (<code>encoding</code>): how it is drawn. <i>Plot</i>: axes, read like a graph. <i>Abstract mapping</i>: a continuous quantity drives a visual property such as size, colour, shape, motion or typography, so a small change in the sound gives a small change in the picture. <i>Symbol</i>: a sign that stands for a category (icon, emoji, word); the picture stays the same until the category changes. Mixed displays are coded by their main encoding; expressive captions, for example, are text whose typography is an abstract mapping of prosody.</p>
+  </section>
+
+  <section class="prose" id="lens">
+    <h2>Theoretical lens (our analysis)</h2>
+    <p>Five perspectives on cross-sensory perception, each turned into questions we answer for every display. These are <b>our</b> judgements of the display, kept separate from the theory the authors cite (<code>cited_theory</code>, RQ4): a pitch contour uses the pitch–height correspondence whether or not its authors mention it. Each lens is used on its own; together they do not form one theory. The <code>lens_*</code> columns need operational definitions checked on a pilot set and, ideally, a second coder.</p>
+
+    <h3>1. Crossmodal correspondences</h3>
+    <p>Consistent associations between features of different senses, such as pitch with elevation, size or brightness, and loudness with size (Spence, 2011†).</p>
+    <ul>
+      <li><code>lens_correspondence</code> (free text): which correspondences the mapping uses, e.g. "pitch–height; loudness–size"; "none" if the mapping is arbitrary or learned.</li>
+      <li><code>lens_scale</code>: perceptual · physical · mixed · not-applicable. Whether frequency and intensity are drawn on perceptual scales (log or mel frequency, loudness) or physical ones (linear Hz, dB). Hermes (1998)† argues a pitch display should keep only what is audible.</li>
+    </ul>
+
+    <h3>2. Amodal properties</h3>
+    <p>Properties that can be picked up by more than one sense, such as synchrony, rhythm, tempo and intensity change (Gibson's amodal invariants; Bahrick &amp; Lickliter's intersensory redundancy†).</p>
+    <ul>
+      <li><code>lens_time</code>: in-time (the picture changes as the sound happens) · time-as-space (time is drawn on an axis, as in a spectrogram) · no-time (a snapshot or a label).</li>
+      <li><code>lens_amodal</code> (several, <code>;</code>): synchrony · rhythm · tempo · intensity · none. Which of them a viewer can pick up. When time is drawn as space, rhythm becomes spacing that has to be read, not perceived as rhythm.</li>
+    </ul>
+
+    <h3>3. Sensorimotor contingencies</h3>
+    <p>Perceiving is mastering how sensory input changes with one's own actions (O'Regan &amp; Noë, 2001†).</p>
+    <ul>
+      <li><code>lens_loop</code>: closed (the viewer's own voice drives the display in real time) · exploratory (the viewer acts on the display to explore other sounds, e.g. by moving, selecting or replaying) · open (the viewer only watches).</li>
+    </ul>
+
+    <h3>4. Form and function in vocal signals</h3>
+    <p>The acoustic form of vocalizations reflects their function: body size, arousal, distress, intent (Pisanski et al., 2022; Morton's motivation-structural rules, 1977†; Ohala's frequency code, 1984†).</p>
+    <ul>
+      <li><code>lens_level</code> (several, <code>;</code>): acoustic (physical quantities) · perceptual (how it sounds) · functional (what the sound signals about the source).</li>
+      <li><code>lens_function_route</code>: label (a recognizer names the function, e.g. an emotion emoji) · form (a visual form that carries the same function, e.g. a larger shape for a larger body) · not-applicable.</li>
+    </ul>
+
+    <h3>5. Auditory scene analysis</h3>
+    <p>Hearing groups sound into objects and streams, such as one talker or one event (Bregman, 1990†). Gabrys (1990) found cues spread across two visual objects harder to learn than cues within one.</p>
+    <ul>
+      <li><code>lens_objects</code>: yes · partly · no. Whether one auditory object appears as one visual object. In a spectrogram, the harmonics of one voice are separate lines: no.</li>
+    </ul>
+    <p class="muted" style="font-size:13px">† From memory; check before citing (listed in <code>TODO.md</code>).</p>
+  </section>
+
+  <section class="prose" id="outcome" aria-labelledby="out-h">
+    <h2 id="out-h">Outcome types</h2>
+    <p>Adapted from the evaluation scenarios of Lam, Bertini, Isenberg, Plaisant &amp; Carpendale (2012), <a href="https://doi.org/10.1109/TVCG.2011.279">Empirical studies in information visualization: Seven scenarios</a>, <i>IEEE TVCG</i> 18(9). Their “user performance”, “user experience” and “environments and work practices” map onto performance, preference/experience and practice. “Learning” is added because voice-training studies measure change in the user's own production over time, which their scenarios do not cover.</p>
+    <ul>
+      <li><b>Performance</b>: accuracy or speed of a task done with the display (identify, match, detect).</li>
+      <li><b>Learning</b>: change over training, including transfer to new items and retention without the display.</li>
+      <li><b>Preference</b>: ratings or rankings of displays.</li>
+      <li><b>Experience</b>: subjective states such as enjoyment, flow or self-efficacy.</li>
+      <li><b>Practice</b>: interviews or observation of how the display is or would be used.</li>
+    </ul>
+    <p class="muted" style="font-size:13.5px">Outcome codes are ours, assigned from the measures listed in each paper; they are part of what needs checking (see <code>TODO.md</code>).</p>
+  </section>
+
+  <section aria-labelledby="dec-h">
+    <div class="section-head">
+      <h2 id="dec-h">Open decisions</h2>
+      <p>Studies affected by these are coded <span class="badge inc-pending">pending decision</span>.</p>
+    </div>
+    <div class="two">
+      <div class="decision panel">
+        <b>Do pitch displays count under criterion 2?</b>
+        <p>Most singing-feedback studies show a pitch contour, which is computed from the signal but is not spectral. Zhang (2026) groups them with spectral feedback. Options: widen criterion 2 to “displays computed from the acoustic signal”, or keep it spectral and treat pitch studies as comparison.</p>
+        <p class="muted" id="dec-pitch"></p>
+      </div>
+      <div class="decision panel">
+        <b>Environmental sound under criterion 3?</b>
+        <p>Most DHH sound-awareness displays target environmental sounds (doorbells, alarms, speech nearby), not voice. They are currently included because they test the same question for the same users: what a computed picture of sound conveys without hearing. An alternative is to restrict criterion 3 to speech, vocalizations and environmental sound, excluding instrumental music.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="rev-h">
+    <h2 id="rev-h">Existing reviews</h2>
+    <ul>
+      <li><b>Zhang (2026).</b> PRISMA review of spectral feedback in vocal learning, organized by psychological mechanism. <i>Frontiers in Psychology</i> 17:1920074. Read in full.</li>
+      <li><b>Lã &amp; Fiuza (2022).</b> <a href="https://www.mdpi.com/2076-3417/12/21/10781">Real-time visual feedback in singing pedagogy: Current trends and future directions</a>. <i>Applied Sciences</i> 12(21), 10781. Lead for singing studies that use spectrograms.</li>
+      <li><b>Hoppe, Sadakata &amp; Desain (2006).</b> Development of real-time visual feedback assistance in singing training: a review. <i>Journal of Computer Assisted Learning</i> 22. Not yet read.</li>
+    </ul>
+    <div class="callout panel">
+      <b>Use Zhang (2026) with caution</b>
+      <p>Most of the 36 studies it reviews use pitch displays rather than spectral ones; evidence on spectral or formant feedback is thin. At least two references are misattributed: Lã &amp; Fiuza (2022) appears as Bernardini et al. (2022), and Blanco, Tassani &amp; Ramirez (2021) as García-García &amp; Tejada (2021). Check every study it cites against the original before using it.</p>
+    </div>
+  </section>
+
+  <section class="prose" aria-labelledby="gap-h">
+    <h2 id="gap-h">Not found so far</h2>
+    <p>Possible gaps. A systematic search is needed before claiming any of them.</p>
+    <ol>
+      <li>Whether untrained viewers can read paralinguistic information (emotion, arousal, speaker sex, distress) from raw spectrograms, with clear ground truth.</li>
+      <li>Eye-tracking studies of how people look at spectrograms.</li>
+      <li>Systematic manipulation of rendering parameters (frequency scale, window length, dynamic range, colour map) and their effect on readability. The closest is House et al. (1966), on display size and aspect ratio.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="exc-h">
+    <div class="section-head"><h2 id="exc-h">Excluded studies</h2></div>
+    <div class="panel table-scroll"><table class="simple" id="excluded"></table></div>
+  </section>
+
+  <section aria-labelledby="ver-h">
+    <div class="section-head">
+      <h2 id="ver-h">To verify</h2>
+      <p>Studies whose coding rests on a secondary source or still has open details.</p>
+    </div>
+    <div class="panel table-scroll"><table class="simple" id="verify"></table></div>
+  </section>
+
+  <footer class="foot">
+    <span>Data built <span data-built></span>.</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  const { esc, statusBadge } = window.SVR;
+  const S = window.STUDIES || [];
+  const link = s => `<a href="studies.html?q=${encodeURIComponent(s.id)}&background=1&no=1">${esc(s.authors)} (${s.year})</a>`;
+  document.getElementById("excluded").innerHTML =
+    `<thead><tr><th>Study</th><th>Title</th><th>Reason</th></tr></thead><tbody>` +
+    S.filter(s => s.include === "no").map(s => `<tr><td>${link(s)}</td><td>${esc(s.title)}</td><td>${esc(s.exclude_reason)}</td></tr>`).join("") + "</tbody>";
+  document.getElementById("verify").innerHTML =
+    `<thead><tr><th>Study</th><th>Status</th><th>What is open</th></tr></thead><tbody>` +
+    S.filter(s => s.status === "verify" || s.status === "secondary").map(s =>
+      `<tr><td>${link(s)}</td><td>${statusBadge(s)}</td><td>${esc(s.source_note || "Details not checked against the original.")}</td></tr>`).join("") + "</tbody>";
+  const DES = ["rct", "experiment", "single-case", "case-study", "single-group", "crowdsourcing", "mixed", "qualitative", "unknown"];
+  const IN = S.filter(s => s.include === "yes" || s.include === "pending");
+  const cell = (d, c) => {
+    const xs = IN.filter(s => s.design === d && s.criteria.includes(c));
+    return xs.length ? `<b>${xs.length}</b> <span class="muted" style="font-size:12.5px">${xs.map(s => esc(window.SVR.shortAuthors(s.authors)) + " " + s.year).join(", ")}</span>` : '<span class="muted">–</span>';
+  };
+  document.getElementById("design-matrix").innerHTML =
+    `<thead><tr><th>Design</th><th>1 · Reading</th><th>2 · Voice training</th><th>3 · DHH</th></tr></thead><tbody>` +
+    DES.filter(d => IN.some(s => s.design === d)).map(d =>
+      `<tr><td><a href="studies.html?view=table&design=${d}">${esc(window.SVR.VALUE.design[d])}</a></td><td>${cell(d, "1")}</td><td>${cell(d, "2")}</td><td>${cell(d, "3")}</td></tr>`).join("") + "</tbody>";
+  const pitch = S.filter(s => s.include === "pending" && s.displays.includes("pitch"));
+  document.getElementById("dec-pitch").textContent = `Pending on this: ${pitch.map(s => s.authors.split(/,| &/)[0] + " " + s.year).join(", ")}.`;
+})();
+</script>
+</body>
+</html>

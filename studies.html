@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeing Voice · Studies</title>
+<meta name="description" content="All coded studies as a timeline wall or an evidence table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="data/data.js"></script>
+<script src="demo/demo.js"></script>
+<script src="assets/common.js"></script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="index.html">Seeing Voice</a>
+  <nav class="nav" aria-label="Pages">
+    <a href="index.html">Overview</a>
+    <a href="studies.html">Studies</a>
+    <a href="method.html">Method</a>
+  </nav>
+  <button class="theme-btn" type="button"></button>
+</div></header>
+
+<main class="wrap" style="gap:22px">
+  <div class="section-head" style="margin:0">
+    <span class="kicker">Studies</span>
+    <h1 style="font-size:clamp(28px,4vw,38px)">Who looked at which display, and what happened</h1>
+    <p>Each study is coded on three dimensions: the display people saw, the user study that tested it, and the theory the authors give for the design. Hover for the figure and result; click for all three in full. The table puts them side by side.</p>
+  </div>
+
+  <div class="toolbar panel">
+    <div class="toolbar-row">
+      <div class="seg" role="group" aria-label="View">
+        <button type="button" data-view="wall" aria-pressed="true">Timeline</button>
+        <button type="button" data-view="table" aria-pressed="false">Table</button>
+      </div>
+      <label class="field">Criterion
+        <select id="f-criterion"><option value="">All</option><option value="1">1 · Reading</option><option value="2">2 · Voice training</option><option value="3">3 · DHH</option></select>
+      </label>
+      <label class="field">Display <select id="f-display"><option value="">All</option></select></label>
+      <label class="field">Study design
+        <select id="f-design"><option value="">Any</option><option value="rct">Randomized controlled trial</option><option value="experiment">Experiment</option><option value="single-case">Single-case design</option><option value="case-study">Case study</option><option value="single-group">Single group</option><option value="crowdsourcing">Crowdsourcing</option><option value="mixed">Mixed methods</option><option value="qualitative">Qualitative</option><option value="unknown">Unknown</option></select>
+      </label>
+      <label class="field"><span class="sr">Search</span><input type="search" id="f-q" placeholder="Search authors, titles, findings"></label>
+    </div>
+    <div class="toolbar-row">
+      <label class="field">Whose sound
+        <select id="f-whose_sound"><option value="">Any</option><option value="own">Own voice</option><option value="other">Others' sound</option></select>
+      </label>
+      <label class="field">Timing
+        <select id="f-timing"><option value="">Any</option><option value="static">Static</option><option value="real-time">Real-time</option><option value="after-attempt">After attempt</option><option value="unknown">Unknown</option></select>
+      </label>
+      <label class="field">Attention
+        <select id="f-attention"><option value="">Any</option><option value="focal">Focal</option><option value="peripheral">Peripheral</option></select>
+      </label>
+      <label class="check"><input type="checkbox" id="f-pending" checked> pending</label>
+      <label class="check"><input type="checkbox" id="f-background"> background</label>
+      <label class="check"><input type="checkbox" id="f-no"> excluded</label>
+      <button type="button" class="reset" id="reset">Reset</button>
+      <span class="result-n" id="result-n" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <section id="view-wall" aria-label="Timeline">
+    <div class="wall-scroll"><div class="wall" id="wall"></div></div>
+    <div class="wall-legend">
+      <span><i></i>included</span>
+      <span><i class="dash"></i>pending decision</span>
+      <span>Studies coded for two criteria appear in both lanes.</span>
+      <span>“placeholder” = no screenshot yet; the picture shows the display type.</span>
+    </div>
+  </section>
+
+  <section id="view-table" aria-label="Evidence table" hidden>
+    <div class="panel table-scroll"><table class="ev" id="table"></table></div>
+  </section>
+
+  <footer class="foot">
+    <span>Data built <span data-built></span>. Edit <code>data/studies.csv</code>, then run <code>python3 build.py</code>.</span>
+  </footer>
+</main>
+
+<div class="peek panel" id="peek" aria-hidden="true"></div>
+<div class="drawer-bg" id="drawer-bg"></div>
+<aside class="drawer" id="drawer" aria-label="Study details" aria-hidden="true"></aside>
+
+<script src="assets/studies.js"></script>
+</body>
+</html>
