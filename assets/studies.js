@@ -75,7 +75,7 @@
       `<div class="wall-head"><div></div>${BINS.map(b => `<div>${b.label}</div>`).join("")}</div>` +
       lanes.map((c, i) => `
         <div class="wall-lane" data-c="${c}">
-          <div class="lane-label"><span class="n">Criterion ${c}</span><b>${esc(CRIT[c].long)}</b><span>${esc(LANE_TEXT[c])}</span></div>
+          <div class="lane-label"><span class="n">Strand ${c}</span><b>${esc(CRIT[c].long)}</b><span>${esc(LANE_TEXT[c])}</span></div>
           ${grid[i].map(cell => `<div class="cell">${cell.map(s => tile(s, c)).join("")}</div>`).join("")}
         </div>`).join("");
   }

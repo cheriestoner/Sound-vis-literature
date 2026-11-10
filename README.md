@@ -11,10 +11,12 @@ Open `index.html` in a browser. No server is needed.
 | `index.html` | Inclusion criteria and the gallery of display types. The demo section is currently hidden (`hidden` on its `<section>`) |
 | `studies.html` | All studies as a timeline wall or a sortable evidence table, with shared filters. Filters are kept in the URL, e.g. `studies.html?display=spectrum&view=table` |
 | `method.html` | Criteria in full, training levels, coding scheme, open decisions, existing reviews, excluded studies, verification list |
+| `verify.html` | Checks: claims against their sources and study coding against the papers. Saves into `data/claims.csv` and `data/checks.csv` (Chrome/Edge write directly; other browsers download the files) |
 
 ## Working files
 
-- `TODO.md`: checklist of what to verify against the original papers, per study.
+- `data/checks.csv`, `data/claims.csv`: the checklist and the claims made from each source; edit them on `verify.html`.
+- `data/references.csv`: bibliographic details of cited sources; `build.py` writes `data/references.bib` for import into Zotero (File → Import).
 - `SEARCH.md`: search plan, decisions needed before searching, areas not yet searched.
 
 ## Editing the data

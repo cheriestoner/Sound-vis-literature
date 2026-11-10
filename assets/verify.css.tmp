@@ -1,0 +1,33 @@
+
+/* ---------- checks page ---------- */
+.vf-bar { padding: 14px 16px; display: grid; gap: 10px; position: sticky; top: 56px; z-index: 20; box-shadow: var(--shadow); }
+.vf-stats { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 14px; }
+.vf-stats .bad { color: var(--bad); }
+.vf-save { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13.5px; }
+.vf-save #pending { margin-right: auto; color: var(--muted); }
+.vf-save #pending b { color: var(--ink); }
+.vf-btn { border: 1px solid var(--line); background: var(--paper); border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 13.5px; }
+.vf-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--panel); font-weight: 500; }
+.vf-btn:disabled { opacity: .45; cursor: default; }
+.vf-msg { font-size: 13px; color: var(--muted); }
+.vf-msg:empty { display: none; }
+.vf-msg.ok { color: var(--ok); } .vf-msg.warn { color: var(--warn); } .vf-msg.bad { color: var(--bad); }
+.vf-list { display: grid; gap: 14px; }
+.vf-group { padding: 4px 16px 6px; }
+.vf-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.vf-meta { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.vf-item { padding: 12px 0 12px 12px; border-bottom: 1px solid var(--line); border-left: 3px solid transparent; display: grid; gap: 8px; }
+.vf-item:last-child { border-bottom: 0; }
+.vf-item.changed { border-left-color: var(--accent); }
+.vf-item.st-done, .vf-item.st-checked-online, .vf-item.st-checked-fulltext { opacity: .62; }
+.vf-item.st-problem, .vf-item.st-wrong { border-left-color: var(--bad); }
+.vf-text { font-size: 14.5px; }
+.vf-controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-start; }
+.vf-lab { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }
+.vf-lab.grow { flex: 1 1 260px; }
+.vf-lab select, .vf-lab textarea {
+  font: inherit; font-size: 13.5px; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; width: 100%;
+}
+.vf-lab textarea { resize: vertical; min-height: 32px; line-height: 1.4; }
+@media (max-width: 640px) { .vf-bar { position: static; } .vf-item { padding-left: 8px; } }

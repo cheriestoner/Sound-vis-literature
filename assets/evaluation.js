@@ -40,7 +40,7 @@
   ], (s, k) => s.untrained_interpretation === k);
   const noCrit = IN.filter(s => !s.criteria.length).length;
   if (noCrit) document.getElementById("m-interp").insertAdjacentHTML("afterend",
-    `<p class="ev-note">${noCrit} pending ${noCrit === 1 ? "study fits" : "studies fit"} only the revised criteria and ${noCrit === 1 ? "is" : "are"} not shown in these columns.</p>`);
+    `<p class="ev-note">${noCrit} pending ${noCrit === 1 ? "study belongs" : "studies belong"} to no strand yet and ${noCrit === 1 ? "is" : "are"} not shown in these columns.</p>`);
 
   // theories cited and mapping rationale (RQ4)
   (function theory() {

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seeing Voice · Checks</title>
+<meta name="description" content="Manual checks: claims against their sources, and study coding against the original papers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="data/data.js"></script>
+<script src="assets/common.js"></script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="index.html">Seeing Voice</a>
+  <nav class="nav" aria-label="Pages">
+    <a href="index.html">Overview</a>
+    <a href="studies.html">Studies</a>
+    <a href="method.html">Method</a>
+    <a href="verify.html">Checks</a>
+  </nav>
+  <button class="theme-btn" type="button"></button>
+</div></header>
+
+<main class="wrap" style="gap:22px">
+  <div class="section-head" style="margin:0">
+    <span class="kicker">Working page</span>
+    <h1 style="font-size:clamp(28px,4vw,38px)">Manual checks against the sources</h1>
+    <p>Each claim the site makes from a source, and each coded detail of a study, waiting to be checked against the original. Changes are kept in this browser until you save them into <code>data/claims.csv</code> and <code>data/checks.csv</code>; then run <code>python3 build.py</code>.</p>
+  </div>
+
+  <div class="vf-bar panel" id="bar" aria-live="polite">
+    <div class="vf-stats" id="stats"></div>
+    <div class="vf-save">
+      <span id="pending"></span>
+      <button type="button" class="vf-btn primary" id="save">Save to data folder</button>
+      <button type="button" class="vf-btn" id="download">Download CSVs</button>
+    </div>
+    <p class="vf-msg" id="msg"></p>
+  </div>
+
+  <div class="toolbar panel">
+    <div class="toolbar-row">
+      <div class="seg" role="group" aria-label="List">
+        <button type="button" data-tab="claims" aria-pressed="true">Claims</button>
+        <button type="button" data-tab="studies" aria-pressed="false">Studies</button>
+        <button type="button" data-tab="general" aria-pressed="false">Across studies</button>
+      </div>
+      <label class="field">Show
+        <select id="f-status">
+          <option value="open">Still open</option>
+          <option value="">All</option>
+          <option value="closed">Done</option>
+          <option value="problem">Problems</option>
+          <option value="changed">Changed, not yet built</option>
+        </select>
+      </label>
+      <label class="field">Search <input type="search" id="f-q" placeholder="author, id, word"></label>
+      <span class="result-n" id="result-n"></span>
+    </div>
+  </div>
+
+  <section id="list" class="vf-list" aria-label="Checks"></section>
+
+  <footer class="foot">
+    <span>Data built <span data-built></span>. Saving writes the two CSV files; other columns and rows are left as they are on disk.</span>
+  </footer>
+</main>
+
+<script src="assets/verify.js"></script>
+</body>
+</html>

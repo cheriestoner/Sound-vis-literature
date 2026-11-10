@@ -36,8 +36,8 @@
 
   // ---------- labels ----------
   const CRIT = {
-    "1": { short: "Reading", long: "Reading speech from spectrographic displays" },
-    "2": { short: "Voice training", long: "Spectral displays as voice-training feedback" },
+    "1": { short: "Reading", long: "Reading speech from displays" },
+    "2": { short: "Voice training", long: "Displays as voice-training feedback" },
     "3": { short: "DHH", long: "Sound visualization for deaf and hard-of-hearing users" },
   };
   const VALUE = {
